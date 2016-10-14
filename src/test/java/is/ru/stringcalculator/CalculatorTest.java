@@ -54,10 +54,25 @@ public class CalculatorTest {
 			}
 		}
 	}
+	@Test
+	public void IgnoreBiggerThan1000(){
+		assertEquals(10, Calculator.add("50000,200004,22000,10,200003,40000"));
+
+	}
+	@Test
+	public void DelimTest(){
+		assertEquals(22, Calculator.add("//asdadwa\n1asdadwa2asdadwa3asdadwa5asdadwa1\n5asdadwa5"));	
+	}
+	public void DelimTest1(){
+		assertEquals(38, Calculator.add("//>\n1>2>3>20>1\n2>9"));	
+	}
+	public void DelimTest2(){
+		assertEquals(18, Calculator.add("//,\n1,2,3,5,1\n,6"));
+	}
+	public void DelimTest3(){
+		assertEquals(13, Calculator.add("//,,,,,,,,,sadad\n1,2,3,,,,,,,,,sadad1\n,6"));
+	}
 
 
-
-
+        
 }
-
-

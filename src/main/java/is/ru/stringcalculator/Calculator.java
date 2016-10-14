@@ -18,11 +18,29 @@ public class Calculator {
 		return Integer.parseInt(number);
 	}
 
-	private static String[] splitNumbers(String numbers){
-		String newString = numbers.replaceAll("\n",",");
-		String[] Numbers = newString.split(",");
-		return Numbers;
-	}
+	private static String[] splitNumbers(String number){
+		
+        	String Deli = null;
+        	if (number.contains("//")) {
+            		number = number.substring(2, number.length());
+            		String[] Delim = number.split("\n");
+            		Deli = Delim[0];
+            		String newString = number;
+            		newString = newString.replaceAll(Deli, ",");
+            		newString = newString.replaceAll("\n", ",");
+            		newString = newString.replaceAll(",,", ",");
+            		newString = newString.substring(1, newString.length());
+            		String[] Numbers = newString.split(",");
+
+            	return Numbers;
+        	}
+        	else {
+           		 String newString = number.replaceAll("\n", ",");
+            		 String[] Numbers = newString.split(",");
+            		 return Numbers;
+
+        }
+    }
       
     private static int sum(String[] numbers){
  	   	int total = 0;
