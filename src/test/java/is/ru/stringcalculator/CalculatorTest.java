@@ -1,8 +1,6 @@
 package is.ru.stringcalculator;
-
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-
 public class CalculatorTest {
 
 	public static void main(String args[]) {
@@ -24,9 +22,22 @@ public class CalculatorTest {
 		assertEquals(3, Calculator.add("1,2"));
 	}	
 
+    	@Test
+	public void testMultipleNumbers(){
+    		assertEquals(6, Calculator.add("1,2,3"));
+
+	}
+	@Test 
+	public void testAddNumbers(){
+		assertEquals(11, Calculator.add("5,6"));
+	} 
+
 	@Test
-    public void testMultipleNumbers(){
-    	assertEquals(6, Calculator.add("1,2,3"));
-    }
+	public void testAddNumbers1(){
+		assertEquals(20, Calculator.add("10,10"));
+	}
+
+
 
 }
+
